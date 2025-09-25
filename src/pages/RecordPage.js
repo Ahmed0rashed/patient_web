@@ -85,10 +85,10 @@ const RecordPage = () => {
               Sign in to add this medical report to your personal records for easy access.
             </p>
             <div style={styles.authButtons}>
-              <a href="/#/login" style={styles.authButton}>
+              <a href={`/#/login?recordId=${recordId}&redirect=/showReport/${recordId}`} style={styles.authButton}>
                 Sign In
               </a>
-              <a href="/#/register" style={styles.authButtonPrimary}>
+              <a href={`/#/register?recordId=${recordId}&redirect=/showReport/${recordId}`} style={styles.authButtonPrimary}>
                 Create Account
               </a>
             </div>

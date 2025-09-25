@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link, useSearchParams } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { loginPatient, setAuthToken } from '../services/authService';
+import { addRecordToPatient } from '../services/patientRecordService';
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -13,6 +14,11 @@ const LoginPage = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+  
+  // Get URL parameters
+  const [searchParams] = useSearchParams();
+  const recordId = searchParams.get('recordId');
+  const redirectPath = searchParams.get('redirect') || '/dashboard';
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -35,9 +41,22 @@ const LoginPage = () => {
         setAuthToken(response.token);
         // Update auth context with user data
         login(response.patient, response.token);
-        setSuccess('Login successful! Redirecting to your records...');
+        
+        // If there's a recordId, add it to the patient's records
+        if (recordId) {
+          try {
+            await addRecordToPatient(response.patient._id || response.patient.id, recordId);
+            setSuccess('Login successful! Record added to your account. Redirecting...');
+          } catch (recordErr) {
+            console.error('Error adding record to patient:', recordErr);
+            setSuccess('Login successful! Redirecting...');
+          }
+        } else {
+          setSuccess('Login successful! Redirecting...');
+        }
+        
         setTimeout(() => {
-          navigate('/dashboard');
+          navigate(redirectPath); // Redirect to specified path or dashboard
         }, 1000);
       }
     } catch (err) {
