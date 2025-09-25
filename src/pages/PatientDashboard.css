@@ -1,0 +1,21 @@
+/* Responsive grid for patient dashboard */
+.records-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 20px;
+}
+
+/* Tablet view - 2 columns */
+@media (max-width: 1024px) {
+    .records-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile view - 1 column */
+@media (max-width: 768px) {
+    .records-grid {
+        grid-template-columns: 1fr;
+    }
+}
