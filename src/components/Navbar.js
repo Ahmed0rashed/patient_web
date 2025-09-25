@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import './Navbar.css';
 
 const Navbar = () => {
   const { user, isAuthenticated, logout } = useAuth();
@@ -9,6 +10,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     logout();
+    setIsMenuOpen(false); // Close mobile menu
     navigate('/');
   };
 
@@ -16,21 +18,26 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleNavClick = () => {
+    setIsMenuOpen(false); // Close mobile menu when navigating
+  };
+
+
   return (
     <nav style={styles.navbar}>
-      <div style={styles.container}>
+      <div style={styles.container} className="navbar-container">
         {/* Logo and Brand */}
         <div style={styles.brand}>
           <Link to="/" style={styles.brandLink}>
             <div style={styles.logo}>
               
-              <span style={styles.brandName}>Radintel</span>
+              <span style={styles.brandName} className="brand-name">Radintel</span>
             </div>
           </Link>
         </div>
 
         {/* Desktop Navigation */}
-        <div style={styles.desktopNav}>
+        <div style={styles.desktopNav} className="desktop-nav">
           {isAuthenticated && (
             <Link to="/dashboard" style={styles.navLink}>
               My Records
@@ -40,7 +47,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Auth Section */}
-        <div style={styles.desktopAuth}>
+        <div style={styles.desktopAuth} className="desktop-auth">
           {isAuthenticated ? (
             <div style={styles.userSection}>
               <div style={styles.userInfo}>
@@ -66,6 +73,7 @@ const Navbar = () => {
         <button 
           onClick={toggleMenu} 
           style={styles.mobileMenuBtn}
+          className="mobile-menu-btn"
           aria-label="Toggle menu"
         >
           <span style={styles.hamburger}></span>
@@ -76,12 +84,13 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div style={styles.mobileMenu}>
-          <div style={styles.mobileNav}>
+        <div style={styles.mobileMenu} className="mobile-menu">
+          <div style={styles.mobileNav} className="mobile-nav">
             <Link 
               to="/" 
               style={styles.mobileNavLink}
-              onClick={() => setIsMenuOpen(false)}
+              className="mobile-nav-link"
+              onClick={handleNavClick}
             >
               Home
             </Link>
@@ -89,7 +98,8 @@ const Navbar = () => {
               <Link 
                 to="/dashboard" 
                 style={styles.mobileNavLink}
-                onClick={() => setIsMenuOpen(false)}
+                className="mobile-nav-link"
+                onClick={handleNavClick}
               >
                 My Records
               </Link>
@@ -97,14 +107,16 @@ const Navbar = () => {
             <Link 
               to="#" 
               style={styles.mobileNavLink}
-              onClick={() => setIsMenuOpen(false)}
+              className="mobile-nav-link"
+              onClick={handleNavClick}
             >
               About
             </Link>
             <Link 
               to="#" 
               style={styles.mobileNavLink}
-              onClick={() => setIsMenuOpen(false)}
+              className="mobile-nav-link"
+              onClick={handleNavClick}
             >
               Contact
             </Link>
@@ -119,11 +131,9 @@ const Navbar = () => {
                   </span>
                 </div>
                 <button 
-                  onClick={() => {
-                    handleLogout();
-                    setIsMenuOpen(false);
-                  }} 
+                  onClick={handleLogout}
                   style={styles.mobileLogoutBtn}
+                  className="mobile-auth-button"
                 >
                   Logout
                 </button>
@@ -133,14 +143,16 @@ const Navbar = () => {
                 <Link 
                   to="/login" 
                   style={styles.mobileLoginBtn}
-                  onClick={() => setIsMenuOpen(false)}
+                  className="mobile-auth-button"
+                  onClick={handleNavClick}
                 >
                   Sign In
                 </Link>
                 <Link 
                   to="/register" 
                   style={styles.mobileRegisterBtn}
-                  onClick={() => setIsMenuOpen(false)}
+                  className="mobile-auth-button"
+                  onClick={handleNavClick}
                 >
                   Get Started
                 </Link>
@@ -170,6 +182,14 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'space-between',
     height: '70px',
+    '@media (max-width: 768px)': {
+      padding: '0 16px',
+      height: '60px',
+    },
+    '@media (max-width: 480px)': {
+      padding: '0 12px',
+      height: '56px',
+    },
   },
   brand: {
     flex: '0 0 auto',
@@ -194,6 +214,12 @@ const styles = {
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
+    '@media (max-width: 768px)': {
+      fontSize: '1.3rem',
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '1.2rem',
+    },
   },
   desktopNav: {
     display: 'flex',
@@ -201,6 +227,9 @@ const styles = {
     gap: '32px',
     flex: '1',
     justifyContent: 'center',
+    '@media (max-width: 768px)': {
+      display: 'none',
+    },
   },
   navLink: {
     color: '#cbd5e1',
@@ -216,6 +245,9 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     gap: '16px',
+    '@media (max-width: 768px)': {
+      display: 'none',
+    },
   },
   userSection: {
     display: 'flex',
@@ -277,6 +309,9 @@ const styles = {
     padding: '8px',
     flexDirection: 'column',
     gap: '4px',
+    '@media (max-width: 768px)': {
+      display: 'flex',
+    },
   },
   hamburger: {
     width: '25px',
@@ -290,12 +325,22 @@ const styles = {
     background: 'linear-gradient(135deg, #1e293b 0%, #334155 100%)',
     borderTop: '1px solid #475569',
     padding: '20px',
+    '@media (max-width: 768px)': {
+      display: 'block',
+    },
+    '@media (max-width: 480px)': {
+      padding: '16px',
+    },
   },
   mobileNav: {
     display: 'flex',
     flexDirection: 'column',
     gap: '16px',
     marginBottom: '24px',
+    '@media (max-width: 480px)': {
+      gap: '12px',
+      marginBottom: '20px',
+    },
   },
   mobileNavLink: {
     color: '#cbd5e1',
@@ -367,19 +412,5 @@ const styles = {
   },
 };
 
-// Add responsive styles
-const mediaQuery = `@media (max-width: 768px) {
-  .desktop-nav { display: none !important; }
-  .desktop-auth { display: none !important; }
-  .mobile-menu-btn { display: flex !important; }
-  .mobile-menu { display: block !important; }
-}`;
-
-// Inject media query
-if (typeof document !== 'undefined') {
-  const style = document.createElement('style');
-  style.textContent = mediaQuery;
-  document.head.appendChild(style);
-}
 
 export default Navbar;

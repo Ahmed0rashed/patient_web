@@ -1,0 +1,64 @@
+/* Mobile Navbar Styles */
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none !important;
+    }
+
+    .desktop-auth {
+        display: none !important;
+    }
+
+    .mobile-menu-btn {
+        display: flex !important;
+    }
+
+    .mobile-menu {
+        display: block !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-container {
+        padding: 0 12px !important;
+        height: 56px !important;
+    }
+
+    .brand-name {
+        font-size: 1.2rem !important;
+    }
+
+    .mobile-menu {
+        padding: 16px !important;
+    }
+
+    .mobile-nav {
+        gap: 12px !important;
+        margin-bottom: 20px !important;
+    }
+}
+
+/* Touch-friendly mobile menu */
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        min-width: 44px;
+        min-height: 44px;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mobile-nav-link {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        padding: 12px 16px;
+    }
+
+    .mobile-auth-button {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 24px;
+    }
+}

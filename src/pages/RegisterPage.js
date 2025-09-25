@@ -3,6 +3,7 @@ import { useNavigate, Link, useSearchParams } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { registerPatient, setAuthToken } from '../services/authService';
 import { addRecordToPatient } from '../services/patientRecordService';
+import './AuthPages.css';
 
 const RegisterPage = () => {
   const navigate = useNavigate();
@@ -124,65 +125,42 @@ const RegisterPage = () => {
   };
 
   return (
-    <div style={styles.container}>
-      {/* Left Side - Medical Theme */}
-      <div style={styles.leftSide}>
-        <div style={styles.medicalScene}>
-          <div style={styles.holographicDisplay}>
-            <div style={styles.displayHeader}>
-              <h3 style={styles.displayTitle}>AI Medical Platform</h3>
-              <p style={styles.displaySubtitle}>Join the Future of Healthcare</p>
-            </div>
-            <div style={styles.bodyDiagram}>
-
-            </div>
-            <div style={styles.diagnosticCharts}>
-              <div style={styles.chartBar}></div>
-              <div style={styles.chartBar}></div>
-              <div style={styles.chartBar}></div>
+    <div style={styles.container} className="auth-container">
+          {/* Left Side - Welcome Text Only */}
+          <div style={styles.leftSide} className="auth-left-side">
+            <div style={styles.welcomeText}>
+              <h1 style={styles.welcomeTitle} className="auth-welcome-title">Welcome to Radintel</h1>
+              <p style={styles.welcomeSubtitle} className="auth-welcome-subtitle">
+                Your trusted platform for advanced medical imaging and AI-powered diagnostic excellence.
+              </p>
             </div>
           </div>
-          <div style={styles.doctorFigure}>
-            <div style={styles.doctorBody}></div>
-            <div style={styles.stethoscope}></div>
-          </div>
-          <div style={styles.desk}>
-            <div style={styles.laptop}></div>
-          </div>
-        </div>
-        <div style={styles.welcomeText}>
-          <h1 style={styles.welcomeTitle}>Join Radintel Today</h1>
-          <p style={styles.welcomeSubtitle}>
-            Start your journey with advanced medical imaging and AI-powered diagnostic excellence.
-          </p>
-        </div>
-      </div>
 
       {/* Right Side - Registration Form */}
-      <div style={styles.rightSide}>
-        <div style={styles.formContainer}>
+      <div style={styles.rightSide} className="auth-right-side">
+        <div style={styles.formContainer} className="auth-form-container">
           <div style={styles.formHeader}>
             <div style={styles.logoIcon}></div>
-            <h1 style={styles.formTitle}>Create Account</h1>
-            <p style={styles.formSubtitle}>Join our medical platform</p>
+            <h1 style={styles.formTitle} className="auth-form-title">Create Account</h1>
+            <p style={styles.formSubtitle} className="auth-form-subtitle">Join our medical platform</p>
           </div>
 
-          <form onSubmit={handleSubmit} style={styles.form}>
+          <form onSubmit={handleSubmit} style={styles.form} className="auth-form">
             {error && (
-              <div style={styles.errorMessage}>
+              <div style={styles.errorMessage} className="auth-message">
                 <span style={styles.errorIcon}></span>
                 {error}
               </div>
             )}
 
             {success && (
-              <div style={styles.successMessage}>
+              <div style={styles.successMessage} className="auth-message">
                 <span style={styles.successIcon}></span>
                 {success}
               </div>
             )}
 
-            <div style={styles.inputGroup}>
+            <div style={styles.inputGroup} className="auth-input-group">
               <div style={styles.inputIcon}>👤</div>
               <input
                 type="text"
@@ -192,11 +170,12 @@ const RegisterPage = () => {
                 onChange={handleChange}
                 required
                 style={styles.input}
+                className="auth-input"
                 placeholder="First Name"
               />
             </div>
 
-            <div style={styles.inputGroup}>
+            <div style={styles.inputGroup} className="auth-input-group">
               <div style={styles.inputIcon}></div>
               <input
                 type="email"
@@ -206,11 +185,12 @@ const RegisterPage = () => {
                 onChange={handleChange}
                 required
                 style={styles.input}
+                className="auth-input"
                 placeholder="Email Address"
               />
             </div>
 
-            <div style={styles.inputGroup}>
+            <div style={styles.inputGroup} className="auth-input-group">
               <div style={styles.inputIcon}></div>
               <input
                 type="text"
@@ -220,11 +200,12 @@ const RegisterPage = () => {
                 onChange={handleChange}
                 required
                 style={styles.input}
+                className="auth-input"
                 placeholder="National ID"
               />
             </div>
 
-            <div style={styles.inputGroup}>
+            <div style={styles.inputGroup} className="auth-input-group">
               <div style={styles.inputIcon}></div>
               <input
                 type="tel"
@@ -234,13 +215,14 @@ const RegisterPage = () => {
                 onChange={handleChange}
                 required
                 style={styles.input}
+                className="auth-input"
                 placeholder="Contact Number"
                 pattern="[0-9]{10,15}"
                 title="Please enter a valid contact number (10-15 digits)"
               />
             </div>
 
-            <div style={styles.inputGroup}>
+            <div style={styles.inputGroup} className="auth-input-group">
               <div style={styles.inputIcon}></div>
               <input
                 type="password"
@@ -250,6 +232,7 @@ const RegisterPage = () => {
                 onChange={handleChange}
                 required
                 style={styles.input}
+                className="auth-input"
                 placeholder="Password"
               />
               <div style={styles.eyeIcon}></div>
@@ -262,6 +245,7 @@ const RegisterPage = () => {
                 ...styles.submitButton,
                 ...(loading ? styles.submitButtonDisabled : {})
               }}
+              className="auth-submit-button"
             >
               {loading ? 'Creating Account...' : 'Create Account'}
             </button>
@@ -309,127 +293,12 @@ const styles = {
       minHeight: '35vh',
     },
   },
-  medicalScene: {
-    position: 'relative',
-    width: '100%',
-    height: '400px',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  holographicDisplay: {
-    position: 'absolute',
-    top: '20%',
-    left: '50%',
-    transform: 'translateX(-50%)',
-    width: '300px',
-    height: '200px',
-    background: 'rgba(59, 130, 246, 0.1)',
-    border: '2px solid rgba(59, 130, 246, 0.3)',
-    borderRadius: '16px',
-    backdropFilter: 'blur(10px)',
-    padding: '20px',
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '10px',
-  },
-  displayHeader: {
-    textAlign: 'center',
-    marginBottom: '10px',
-  },
-  displayTitle: {
-    fontSize: '14px',
-    fontWeight: '600',
-    color: '#ffffff',
-    margin: '0 0 5px 0',
-  },
-  displaySubtitle: {
-    fontSize: '10px',
-    color: '#e0e7ff',
-    margin: 0,
-  },
-  bodyDiagram: {
-    display: 'flex',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    margin: '10px 0',
-  },
-  heartIcon: {
-    fontSize: '20px',
-    animation: 'pulse 2s infinite',
-  },
-  brainIcon: {
-    fontSize: '20px',
-    animation: 'pulse 2s infinite 0.5s',
-  },
-  lungIcon: {
-    fontSize: '20px',
-    animation: 'pulse 2s infinite 1s',
-  },
-  diagnosticCharts: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'end',
-    height: '40px',
-    marginTop: '10px',
-  },
-  chartBar: {
-    width: '20px',
-    background: 'linear-gradient(to top, #3b82f6, #06b6d4)',
-    borderRadius: '2px',
-    height: '30px',
-    animation: 'grow 2s infinite alternate',
-  },
-  doctorFigure: {
-    position: 'absolute',
-    bottom: '20%',
-    left: '30%',
-    width: '60px',
-    height: '80px',
-  },
-  doctorBody: {
-    width: '40px',
-    height: '60px',
-    background: '#ffffff',
-    borderRadius: '20px 20px 0 0',
-    position: 'relative',
-  },
-  stethoscope: {
-    position: 'absolute',
-    top: '10px',
-    right: '-10px',
-    width: '20px',
-    height: '20px',
-    background: '#3b82f6',
-    borderRadius: '50%',
-  },
-  desk: {
-    position: 'absolute',
-    bottom: '10%',
-    right: '20%',
-    width: '80px',
-    height: '40px',
-    background: '#ffffff',
-    borderRadius: '8px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  laptop: {
-    width: '60px',
-    height: '30px',
-    background: '#1e293b',
-    borderRadius: '4px',
-    position: 'relative',
-  },
-  welcomeText: {
-    position: 'absolute',
-    bottom: '40px',
-    left: '40px',
-    right: '40px',
-    color: 'white',
-    textAlign: 'left',
-  },
+      welcomeText: {
+        color: 'white',
+        textAlign: 'center',
+        maxWidth: '500px',
+        margin: '0 auto',
+      },
   welcomeTitle: {
     fontSize: '2.5rem',
     fontWeight: '700',

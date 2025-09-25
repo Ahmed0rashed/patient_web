@@ -10,11 +10,13 @@ import RegisterPage from './pages/RegisterPage';
 import PatientDashboard from './pages/PatientDashboard';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 const App = () => {
   return (
     <AuthProvider>
       <Router>
+        <ScrollToTop />
         <div style={styles.app}>
           <Navbar />
           <Routes>

@@ -1,53 +1,54 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Footer.css';
 
 const Footer = () => {
   return (
     <footer style={styles.footer}>
       <div style={styles.container}>
-        <div style={styles.content}>
-          <div style={styles.section}>
+        <div style={styles.content} className="footer-content">
+          <div style={styles.section} className="footer-section">
             <h3 style={styles.title}>Radintel</h3>
             <p style={styles.description}>
               Your trusted platform for managing and accessing medical reports with AI-powered explanations.
             </p>
             </div>
 
-          <div style={styles.section}>
+          <div style={styles.section} className="footer-section">
             <h4 style={styles.sectionTitle}>Quick Links</h4>
-            <ul style={styles.linkList}>
-              <li><Link to="/" style={styles.link}>Home</Link></li>
-              <li><Link to="/login" style={styles.link}>Sign In</Link></li>
-              <li><Link to="/register" style={styles.link}>Register</Link></li>
-              <li><button style={styles.linkButton}>About Us</button></li>
-              <li><button style={styles.linkButton}>Contact</button></li>
+            <ul style={styles.linkList} className="footer-links">
+              <li><Link to="/" style={styles.link} className="footer-link">Home</Link></li>
+              <li><Link to="/login" style={styles.link} className="footer-link">Sign In</Link></li>
+              <li><Link to="/register" style={styles.link} className="footer-link">Register</Link></li>
+              <li><button style={styles.linkButton} className="footer-link-button">About Us</button></li>
+              <li><button style={styles.linkButton} className="footer-link-button">Contact</button></li>
             </ul>
           </div>
 
-          <div style={styles.section}>
+          <div style={styles.section} className="footer-section">
             <h4 style={styles.sectionTitle}>Services</h4>
-            <ul style={styles.linkList}>
-              <li><button style={styles.linkButton}>Medical Reports</button></li>
-              <li><button style={styles.linkButton}>AI Explanations</button></li>
-              <li><button style={styles.linkButton}>PDF Downloads</button></li>
-              <li><button style={styles.linkButton}>Image Viewer</button></li>
-              <li><button style={styles.linkButton}>Patient Records</button></li>
+            <ul style={styles.linkList} className="footer-links">
+              <li><button style={styles.linkButton} className="footer-link-button">Medical Reports</button></li>
+              <li><button style={styles.linkButton} className="footer-link-button">AI Explanations</button></li>
+              <li><button style={styles.linkButton} className="footer-link-button">PDF Downloads</button></li>
+              <li><button style={styles.linkButton} className="footer-link-button">Image Viewer</button></li>
+              <li><button style={styles.linkButton} className="footer-link-button">Patient Records</button></li>
             </ul>
           </div>
 
-          <div style={styles.section}>
+          <div style={styles.section} className="footer-section">
             <h4 style={styles.sectionTitle}>Support</h4>
-            <ul style={styles.linkList}>
-              <li><button style={styles.linkButton}>Help Center</button></li>
-              <li><button style={styles.linkButton}>Privacy Policy</button></li>
-              <li><button style={styles.linkButton}>Terms of Service</button></li>
-              <li><button style={styles.linkButton}>FAQ</button></li>
-              <li><button style={styles.linkButton}>Report Issue</button></li>
+            <ul style={styles.linkList} className="footer-links">
+              <li><button style={styles.linkButton} className="footer-link-button">Help Center</button></li>
+              <li><button style={styles.linkButton} className="footer-link-button">Privacy Policy</button></li>
+              <li><button style={styles.linkButton} className="footer-link-button">Terms of Service</button></li>
+              <li><button style={styles.linkButton} className="footer-link-button">FAQ</button></li>
+              <li><button style={styles.linkButton} className="footer-link-button">Report Issue</button></li>
             </ul>
           </div>
         </div>
 
-        <div style={styles.bottom}>
+        <div style={styles.bottom} className="footer-bottom">
           <div style={styles.copyright}>
             <p style={styles.copyrightText}>
               Medical Report System. All rights reserved.
@@ -96,6 +97,16 @@ const styles = {
     gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
     gap: '32px',
     marginBottom: '32px',
+    '@media (max-width: 768px)': {
+      gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+      gap: '24px',
+      marginBottom: '24px',
+    },
+    '@media (max-width: 480px)': {
+      gridTemplateColumns: '1fr',
+      gap: '20px',
+      marginBottom: '20px',
+    },
   },
   section: {
     display: 'flex',
@@ -110,12 +121,28 @@ const styles = {
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
+    '@media (max-width: 768px)': {
+      fontSize: '1.3rem',
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '1.2rem',
+      marginBottom: '8px',
+    },
   },
   description: {
     fontSize: '14px',
     color: '#cbd5e1',
     lineHeight: '1.6',
     marginBottom: '20px',
+    '@media (max-width: 768px)': {
+      fontSize: '13px',
+      marginBottom: '16px',
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '12px',
+      marginBottom: '12px',
+      lineHeight: '1.5',
+    },
   },
   socialLinks: {
     display: 'flex',
@@ -140,6 +167,14 @@ const styles = {
     fontWeight: '600',
     color: '#f1f5f9',
     marginBottom: '16px',
+    '@media (max-width: 768px)': {
+      fontSize: '1rem',
+      marginBottom: '12px',
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '0.9rem',
+      marginBottom: '10px',
+    },
   },
   linkList: {
     listStyle: 'none',
@@ -154,6 +189,17 @@ const styles = {
     transition: 'all 0.2s ease',
     display: 'block',
     padding: '2px 0',
+    '@media (max-width: 768px)': {
+      fontSize: '13px',
+      padding: '4px 0',
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '12px',
+      padding: '6px 0',
+      minHeight: '32px',
+      display: 'flex',
+      alignItems: 'center',
+    },
   },
   linkButton: {
     color: '#cbd5e1',
@@ -168,6 +214,17 @@ const styles = {
     cursor: 'pointer',
     textAlign: 'left',
     width: '100%',
+    '@media (max-width: 768px)': {
+      fontSize: '13px',
+      padding: '4px 0',
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '12px',
+      padding: '6px 0',
+      minHeight: '32px',
+      display: 'flex',
+      alignItems: 'center',
+    },
   },
   bottom: {
     borderTop: '1px solid #475569',
@@ -177,6 +234,16 @@ const styles = {
     alignItems: 'center',
     flexWrap: 'wrap',
     gap: '16px',
+    '@media (max-width: 768px)': {
+      paddingTop: '20px',
+      gap: '12px',
+    },
+    '@media (max-width: 480px)': {
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      paddingTop: '16px',
+      gap: '8px',
+    },
   },
   copyright: {
     display: 'flex',
@@ -187,16 +254,31 @@ const styles = {
     fontSize: '14px',
     color: '#94a3b8',
     margin: 0,
+    '@media (max-width: 768px)': {
+      fontSize: '13px',
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '12px',
+    },
   },
   disclaimer: {
     fontSize: '12px',
     color: '#64748b',
     margin: 0,
     fontStyle: 'italic',
+    '@media (max-width: 768px)': {
+      fontSize: '11px',
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '10px',
+    },
   },
   techInfo: {
     display: 'flex',
     alignItems: 'center',
+    '@media (max-width: 480px)': {
+      alignSelf: 'flex-start',
+    },
   },
   techText: {
     fontSize: '12px',
@@ -206,6 +288,14 @@ const styles = {
     background: 'rgba(59, 130, 246, 0.1)',
     borderRadius: '20px',
     border: '1px solid rgba(59, 130, 246, 0.2)',
+    '@media (max-width: 768px)': {
+      fontSize: '11px',
+      padding: '4px 10px',
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '10px',
+      padding: '3px 8px',
+    },
   },
 };
 

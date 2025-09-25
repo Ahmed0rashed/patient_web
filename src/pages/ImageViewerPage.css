@@ -1,0 +1,214 @@
+/* Mobile ImageViewerPage Styles */
+@media (max-width: 768px) {
+  .image-viewer-wrapper {
+    padding: 12px !important;
+  }
+  
+  .image-viewer-container {
+    border-radius: 6px !important;
+  }
+  
+  .image-viewer-header {
+    padding: 20px !important;
+  }
+  
+  .image-viewer-title {
+    font-size: 1.6rem !important;
+    margin-bottom: 8px !important;
+  }
+  
+  .image-viewer-subtitle {
+    font-size: 0.9rem !important;
+  }
+  
+  .image-viewer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    padding: 16px !important;
+  }
+  
+  .image-viewer-container-item {
+    border-radius: 4px !important;
+  }
+  
+  .image-viewer-image {
+    min-height: 200px !important;
+  }
+  
+  .image-viewer-label {
+    padding: 8px !important;
+    font-size: 11px !important;
+  }
+  
+  .image-viewer-buttons {
+    padding: 16px !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+  
+  .image-viewer-button {
+    width: 100% !important;
+    padding: 12px 20px !important;
+    font-size: 16px !important;
+    min-height: 48px !important;
+    border-radius: 8px !important;
+  }
+  
+  .image-viewer-loading-container,
+  .image-viewer-empty-container {
+    padding: 30px 20px !important;
+  }
+  
+  .image-viewer-loading-title,
+  .image-viewer-empty-title {
+    font-size: 1.1rem !important;
+  }
+  
+  .image-viewer-loading-text,
+  .image-viewer-empty-text {
+    font-size: 0.85rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-viewer-wrapper {
+    padding: 8px !important;
+  }
+  
+  .image-viewer-header {
+    padding: 16px !important;
+  }
+  
+  .image-viewer-title {
+    font-size: 1.4rem !important;
+  }
+  
+  .image-viewer-subtitle {
+    font-size: 0.8rem !important;
+  }
+  
+  .image-viewer-grid {
+    padding: 12px !important;
+    gap: 10px !important;
+  }
+  
+  .image-viewer-image {
+    min-height: 180px !important;
+  }
+  
+  .image-viewer-buttons {
+    padding: 12px !important;
+    gap: 10px !important;
+  }
+  
+  .image-viewer-button {
+    padding: 10px 16px !important;
+    font-size: 15px !important;
+    min-height: 44px !important;
+  }
+  
+  .image-viewer-loading-container,
+  .image-viewer-empty-container {
+    padding: 24px 16px !important;
+  }
+  
+  .image-viewer-loading-icon,
+  .image-viewer-empty-icon {
+    font-size: 1.5rem !important;
+  }
+}
+
+/* Touch-friendly mobile interactions */
+@media (max-width: 768px) {
+  .image-viewer-button {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    font-weight: 600;
+  }
+  
+  .image-viewer-button:active {
+    transform: translateY(1px);
+  }
+  
+  .image-viewer-image {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .image-viewer-image:hover {
+    transform: scale(1.02);
+  }
+}
+
+/* Mobile image optimization */
+@media (max-width: 768px) {
+  .image-viewer-image {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+  }
+  
+  .image-viewer-container-item {
+    transition: box-shadow 0.2s ease;
+  }
+  
+  .image-viewer-container-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Mobile loading and empty states */
+@media (max-width: 768px) {
+  .image-viewer-loading-container,
+  .image-viewer-empty-container {
+    text-align: center;
+  }
+  
+  .image-viewer-loading-icon,
+  .image-viewer-empty-icon {
+    margin-bottom: 12px;
+  }
+  
+  .image-viewer-loading-title,
+  .image-viewer-empty-title {
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  
+  .image-viewer-loading-text,
+  .image-viewer-empty-text {
+    line-height: 1.4;
+  }
+}
+
+/* Mobile print styles */
+@media print and (max-width: 768px) {
+  .image-viewer-wrapper {
+    padding: 0 !important;
+  }
+  
+  .image-viewer-container {
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+  }
+  
+  .image-viewer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    padding: 0 !important;
+  }
+  
+  .image-viewer-image {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    max-width: 100% !important;
+    margin: 10px 0 !important;
+  }
+}

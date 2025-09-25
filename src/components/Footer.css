@@ -1,0 +1,83 @@
+/* Mobile Footer Styles */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+        gap: 24px !important;
+        margin-bottom: 24px !important;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-content {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .footer-section {
+        text-align: left;
+    }
+
+    .footer-links {
+        gap: 4px;
+    }
+
+    .footer-bottom {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 8px !important;
+    }
+
+    .footer-link {
+        min-height: 32px !important;
+        display: flex !important;
+        align-items: center !important;
+        padding: 6px 0 !important;
+    }
+
+    .footer-link-button {
+        min-height: 32px !important;
+        display: flex !important;
+        align-items: center !important;
+        padding: 6px 0 !important;
+    }
+}
+
+/* Touch-friendly mobile footer */
+@media (max-width: 768px) {
+
+    .footer-link,
+    .footer-link-button {
+        min-height: 32px;
+        display: flex;
+        align-items: center;
+        padding: 4px 0;
+    }
+
+    .footer-link:hover,
+    .footer-link-button:hover {
+        color: #f1f5f9;
+        transform: translateX(4px);
+    }
+}
+
+/* Mobile footer animations */
+@media (max-width: 768px) {
+    .footer-section {
+        transition: transform 0.2s ease;
+    }
+
+    .footer-section:hover {
+        transform: translateY(-2px);
+    }
+}

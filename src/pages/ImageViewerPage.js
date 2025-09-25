@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import './ImageViewerPage.css';
 
 const ImageViewerPage = () => {
   const { studyUID, seriesUID } = useParams();
@@ -31,40 +32,40 @@ const ImageViewerPage = () => {
   };
   console.log(imageUrls);
   return (
-    <div style={styles.wrapper}>
-      <div style={styles.container}>
-        <div className="no-print" style={styles.header}>
-          <h2 style={styles.title}>Medical Images</h2>
-          <p style={styles.subtitle}>DICOM images for this study</p>
+    <div style={styles.wrapper} className="image-viewer-wrapper">
+      <div style={styles.container} className="image-viewer-container">
+        <div className="no-print image-viewer-header" style={styles.header}>
+          <h2 style={styles.title} className="image-viewer-title">Medical Images</h2>
+          <p style={styles.subtitle} className="image-viewer-subtitle">DICOM images for this study</p>
         </div>
 
         {loading ? (
-          <div className="no-print" style={styles.loadingContainer}>
-            <div style={styles.loadingIcon}>⏳</div>
-            <h3 style={styles.loadingTitle}>Loading Images</h3>
-            <p style={styles.loadingText}>Please wait while we fetch the medical images...</p>
+          <div className="no-print image-viewer-loading-container" style={styles.loadingContainer}>
+            <div style={styles.loadingIcon} className="image-viewer-loading-icon">⏳</div>
+            <h3 style={styles.loadingTitle} className="image-viewer-loading-title">Loading Images</h3>
+            <p style={styles.loadingText} className="image-viewer-loading-text">Please wait while we fetch the medical images...</p>
           </div>
         ) : imageUrls.length > 0 ? (
-          <div style={styles.imageGrid}>
+          <div style={styles.imageGrid} className="image-viewer-grid">
             {imageUrls.map((url, index) => (
-              <div key={index} style={styles.imageContainer}>
+              <div key={index} style={styles.imageContainer} className="image-viewer-container-item">
                 <img
                   src={url}
                   alt={`DICOM ${index + 1}`}
                   style={styles.image}
-                  className="print-image"
+                  className="print-image image-viewer-image"
                 />
-                <div className="no-print" style={styles.imageLabel}>
+                <div className="no-print image-viewer-label" style={styles.imageLabel}>
                   Image {index + 1}
                 </div>
               </div>
             ))}
           </div>
         ) : (
-          <div className="no-print" style={styles.emptyContainer}>
-            <div style={styles.emptyIcon}>📷</div>
-            <h3 style={styles.emptyTitle}>No Images Found</h3>
-            <p style={styles.emptyText}>No medical images are available for this study.</p>
+          <div className="no-print image-viewer-empty-container" style={styles.emptyContainer}>
+            <div style={styles.emptyIcon} className="image-viewer-empty-icon">📷</div>
+            <h3 style={styles.emptyTitle} className="image-viewer-empty-title">No Images Found</h3>
+            <p style={styles.emptyText} className="image-viewer-empty-text">No medical images are available for this study.</p>
           </div>
         )}
 

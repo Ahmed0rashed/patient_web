@@ -1,0 +1,157 @@
+/* Mobile Auth Pages Styles */
+@media (max-width: 768px) {
+    .auth-container {
+        flex-direction: column !important;
+    }
+
+    .auth-left-side {
+        min-height: 40vh !important;
+        padding: 20px !important;
+    }
+
+    .auth-right-side {
+        min-height: 60vh !important;
+        padding: 20px !important;
+    }
+
+    .auth-form-container {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    .auth-form-title {
+        font-size: 1.8rem !important;
+    }
+
+    .auth-form-subtitle {
+        font-size: 0.9rem !important;
+    }
+
+    .auth-input {
+        font-size: 16px !important;
+        /* Prevents zoom on iOS */
+        padding: 14px 16px 14px 40px !important;
+    }
+
+    .auth-submit-button {
+        padding: 14px 24px !important;
+        font-size: 16px !important;
+        min-height: 48px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-left-side {
+        min-height: 35vh !important;
+        padding: 16px !important;
+    }
+
+    .auth-right-side {
+        min-height: 65vh !important;
+        padding: 16px !important;
+    }
+
+    .auth-form-title {
+        font-size: 1.6rem !important;
+    }
+
+    .auth-form-subtitle {
+        font-size: 0.85rem !important;
+    }
+
+    .auth-input {
+        font-size: 16px !important;
+        padding: 12px 14px 12px 36px !important;
+    }
+
+    .auth-submit-button {
+        padding: 12px 20px !important;
+        font-size: 15px !important;
+        min-height: 44px !important;
+    }
+
+    .auth-medical-scene {
+        height: 200px !important;
+    }
+
+    .auth-holographic-display {
+        width: 200px !important;
+        height: 120px !important;
+        padding: 12px !important;
+    }
+}
+
+/* Touch-friendly mobile inputs */
+@media (max-width: 768px) {
+    .auth-input {
+        min-height: 44px;
+        border-radius: 8px;
+        border: 2px solid #d1d5db;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .auth-input:focus {
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        outline: none;
+    }
+
+    .auth-submit-button {
+        min-height: 48px;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: all 0.2s ease;
+    }
+
+    .auth-submit-button:active {
+        transform: translateY(1px);
+    }
+}
+
+/* Mobile form spacing */
+@media (max-width: 768px) {
+    .auth-form {
+        gap: 16px !important;
+    }
+
+    .auth-input-group {
+        margin-bottom: 16px !important;
+    }
+
+    .auth-options-row {
+        margin-bottom: 12px !important;
+    }
+}
+
+/* Mobile error/success messages */
+@media (max-width: 768px) {
+    .auth-message {
+        padding: 12px 16px !important;
+        font-size: 14px !important;
+        border-radius: 6px !important;
+        margin-bottom: 16px !important;
+    }
+}
+
+/* Mobile welcome text */
+@media (max-width: 768px) {
+    .auth-welcome-title {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+    }
+
+    .auth-welcome-subtitle {
+        font-size: 1rem !important;
+        line-height: 1.4 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-welcome-title {
+        font-size: 1.8rem !important;
+    }
+
+    .auth-welcome-subtitle {
+        font-size: 0.9rem !important;
+    }
+}

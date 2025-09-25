@@ -1,0 +1,162 @@
+/* Mobile ReportDetails Styles */
+@media (max-width: 768px) {
+  .report-container {
+    padding: 20px !important;
+    gap: 20px !important;
+  }
+  
+  .report-title {
+    font-size: 2rem !important;
+    margin-bottom: 24px !important;
+  }
+  
+  .report-row {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  
+  .report-item {
+    padding: 16px !important;
+    font-size: 14px !important;
+  }
+  
+  .report-section {
+    padding: 20px !important;
+    font-size: 14px !important;
+  }
+  
+  .report-explanation-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+  
+  .report-explain-button {
+    width: 100% !important;
+    padding: 14px 20px !important;
+    font-size: 16px !important;
+    min-height: 48px !important;
+  }
+  
+  .report-explanation-content {
+    padding: 20px !important;
+  }
+  
+  .report-explanation-text {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+  }
+  
+  .report-explanation-meta {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+  }
+  
+  .report-disclaimer {
+    padding: 12px !important;
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .report-container {
+    padding: 16px !important;
+    gap: 16px !important;
+  }
+  
+  .report-title {
+    font-size: 1.8rem !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .report-item {
+    padding: 14px !important;
+    font-size: 13px !important;
+  }
+  
+  .report-section {
+    padding: 16px !important;
+    font-size: 13px !important;
+  }
+  
+  .report-explanation-content {
+    padding: 16px !important;
+  }
+  
+  .report-explanation-text {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
+  
+  .report-explanation-meta {
+    font-size: 12px !important;
+  }
+  
+  .report-disclaimer {
+    padding: 10px !important;
+    font-size: 11px !important;
+  }
+}
+
+/* Touch-friendly mobile buttons */
+@media (max-width: 768px) {
+  .report-explain-button {
+    min-height: 48px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .report-explain-button:active {
+    transform: translateY(1px);
+  }
+  
+  .report-explain-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+/* Mobile text optimization */
+@media (max-width: 768px) {
+  .report-section p {
+    line-height: 1.6 !important;
+    margin: 8px 0 !important;
+  }
+  
+  .report-item strong {
+    display: block;
+    margin-bottom: 4px;
+    color: #374151;
+  }
+}
+
+/* Mobile error messages */
+@media (max-width: 768px) {
+  .report-error-message {
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+    border-radius: 6px !important;
+    margin-bottom: 12px !important;
+  }
+}
+
+/* Mobile download button container */
+@media (max-width: 768px) {
+  .download-button-container {
+    flex-direction: column !important;
+    gap: 12px !important;
+    margin-top: 24px !important;
+  }
+  
+  .download-button {
+    width: 100% !important;
+    min-height: 48px !important;
+    font-size: 16px !important;
+  }
+}
