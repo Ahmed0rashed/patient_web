@@ -13,7 +13,7 @@ const ActionPage = ({ actionType }) => {
         const res = await fetch(apiUrl, { method: 'POST' });
 
         if (!res.ok) throw new Error('Something went wrong ❌');
-        const data = await res.json();
+        await res.json();
         setStatus('success');
         setMessage(`✅ The report has been ${actionType === 'approve' ? 'approved' : 'canceled'} successfully.`);
       } catch (err) {

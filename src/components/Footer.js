@@ -19,30 +19,30 @@ const Footer = () => {
               <li><Link to="/" style={styles.link}>Home</Link></li>
               <li><Link to="/login" style={styles.link}>Sign In</Link></li>
               <li><Link to="/register" style={styles.link}>Register</Link></li>
-              <li><a href="#" style={styles.link}>About Us</a></li>
-              <li><a href="#" style={styles.link}>Contact</a></li>
+              <li><button style={styles.linkButton}>About Us</button></li>
+              <li><button style={styles.linkButton}>Contact</button></li>
             </ul>
           </div>
 
           <div style={styles.section}>
             <h4 style={styles.sectionTitle}>Services</h4>
             <ul style={styles.linkList}>
-              <li><a href="#" style={styles.link}>Medical Reports</a></li>
-              <li><a href="#" style={styles.link}>AI Explanations</a></li>
-              <li><a href="#" style={styles.link}>PDF Downloads</a></li>
-              <li><a href="#" style={styles.link}>Image Viewer</a></li>
-              <li><a href="#" style={styles.link}>Patient Records</a></li>
+              <li><button style={styles.linkButton}>Medical Reports</button></li>
+              <li><button style={styles.linkButton}>AI Explanations</button></li>
+              <li><button style={styles.linkButton}>PDF Downloads</button></li>
+              <li><button style={styles.linkButton}>Image Viewer</button></li>
+              <li><button style={styles.linkButton}>Patient Records</button></li>
             </ul>
           </div>
 
           <div style={styles.section}>
             <h4 style={styles.sectionTitle}>Support</h4>
             <ul style={styles.linkList}>
-              <li><a href="#" style={styles.link}>Help Center</a></li>
-              <li><a href="#" style={styles.link}>Privacy Policy</a></li>
-              <li><a href="#" style={styles.link}>Terms of Service</a></li>
-              <li><a href="#" style={styles.link}>FAQ</a></li>
-              <li><a href="#" style={styles.link}>Report Issue</a></li>
+              <li><button style={styles.linkButton}>Help Center</button></li>
+              <li><button style={styles.linkButton}>Privacy Policy</button></li>
+              <li><button style={styles.linkButton}>Terms of Service</button></li>
+              <li><button style={styles.linkButton}>FAQ</button></li>
+              <li><button style={styles.linkButton}>Report Issue</button></li>
             </ul>
           </div>
         </div>
@@ -142,6 +142,20 @@ const styles = {
     transition: 'all 0.2s ease',
     display: 'block',
     padding: '2px 0',
+  },
+  linkButton: {
+    color: '#cbd5e1',
+    textDecoration: 'none',
+    fontSize: '14px',
+    lineHeight: '2',
+    transition: 'all 0.2s ease',
+    display: 'block',
+    padding: '2px 0',
+    background: 'none',
+    border: 'none',
+    cursor: 'pointer',
+    textAlign: 'left',
+    width: '100%',
   },
   bottom: {
     borderTop: '1px solid #475569',

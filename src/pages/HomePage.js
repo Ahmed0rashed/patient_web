@@ -4,7 +4,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { loginPatient, setAuthToken } from '../services/authService';
 
 const HomePage = () => {
-  const { user, isAuthenticated, login } = useAuth();
+  const { isAuthenticated, login } = useAuth();
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
@@ -160,7 +160,7 @@ const HomePage = () => {
                 <input type="checkbox" style={styles.checkbox} />
                 Remember me
               </label>
-              <a href="#" style={styles.forgotLink}>Forgot Password?</a>
+              <button type="button" style={styles.forgotLink}>Forgot Password?</button>
             </div>
 
             <button
@@ -427,6 +427,10 @@ const styles = {
     textDecoration: 'none',
     fontSize: '14px',
     fontWeight: '500',
+    background: 'none',
+    border: 'none',
+    cursor: 'pointer',
+    padding: 0,
   },
   submitButton: {
     background: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)',

@@ -107,7 +107,7 @@ export const isAuthenticated = () => {
   }
 };
 
-export default {
+const authService = {
   registerPatient,
   loginPatient,
   setAuthToken,
@@ -115,3 +115,5 @@ export default {
   removeAuthToken,
   isAuthenticated
 };
+
+export default authService;

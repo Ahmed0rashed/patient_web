@@ -39,6 +39,8 @@ export const explainReport = async (findings, impression) => {
   }
 };
 
-export default {
+const geminiService = {
   explainReport
 };
+
+export default geminiService;

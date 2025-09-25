@@ -62,7 +62,9 @@ export const getPatientRecords = async (patientId) => {
   }
 };
 
-export default {
+const patientRecordService = {
   addRecordToPatient,
   getPatientRecords
 };
+
+export default patientRecordService;

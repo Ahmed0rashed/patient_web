@@ -50,7 +50,7 @@ const PatientDashboard = () => {
     };
 
     fetchPatientRecords();
-  }, [isAuthenticated, user?._id, user?.id, authLoading]);
+  }, [isAuthenticated, user, authLoading]);
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);

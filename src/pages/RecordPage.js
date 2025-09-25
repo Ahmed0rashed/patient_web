@@ -5,7 +5,7 @@ import ReportDetails from '../components/ReportDetails';
 
 const RecordPage = () => {
   const { recordId } = useParams();
-  const { user, isAuthenticated } = useAuth();
+  const { isAuthenticated } = useAuth();
   const [recordData, setRecordData] = useState(null);
   const [reportData, setReportData] = useState(null);
   const [centerData, setCenterData] = useState(null);
