@@ -1,7 +1,7 @@
 import React from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
-import HomePage from './pages/HomePage';
+// import HomePage from './pages/HomePage'; // Unused import removed
 import RecordPage from './pages/RecordPage';
 import ImageViewerPage from './pages/ImageViewerPage';
 import ActionPage from './pages/approveRequstes';
