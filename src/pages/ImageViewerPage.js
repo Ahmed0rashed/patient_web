@@ -24,7 +24,7 @@ const ImageViewerPage = () => {
     };
 
     fetchImageUrls();
-  }, [studyUID, seriesUID]);
+  }, [studyUID, seriesUID, url]);
 
   const handlePrint = () => {
     window.print();
@@ -50,7 +50,7 @@ const ImageViewerPage = () => {
               <div key={index} style={styles.imageContainer}>
                 <img
                   src={url}
-                  alt={`DICOM Image ${index + 1}`}
+                  alt={`DICOM ${index + 1}`}
                   style={styles.image}
                   className="print-image"
                 />
