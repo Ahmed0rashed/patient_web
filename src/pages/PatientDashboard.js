@@ -231,6 +231,12 @@ const styles = {
     margin: '0 auto',
     padding: '20px',
     minHeight: 'calc(100vh - 200px)',
+    '@media (max-width: 768px)': {
+      padding: '16px',
+    },
+    '@media (max-width: 480px)': {
+      padding: '12px',
+    },
   },
   header: {
     textAlign: 'center',
@@ -245,6 +251,12 @@ const styles = {
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
+    '@media (max-width: 768px)': {
+      fontSize: '2rem',
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '1.8rem',
+    },
   },
   subtitle: {
     fontSize: '1.1rem',
@@ -252,6 +264,12 @@ const styles = {
     maxWidth: '600px',
     margin: '0 auto',
     lineHeight: '1.6',
+    '@media (max-width: 768px)': {
+      fontSize: '1rem',
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '0.9rem',
+    },
   },
   recordCard: {
     background: 'white',
@@ -261,6 +279,12 @@ const styles = {
     border: '1px solid #e2e8f0',
     transition: 'all 0.3s ease',
     cursor: 'pointer',
+    '@media (max-width: 768px)': {
+      padding: '20px',
+    },
+    '@media (max-width: 480px)': {
+      padding: '16px',
+    },
   },
   recordHeader: {
     display: 'flex',

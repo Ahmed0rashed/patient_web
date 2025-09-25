@@ -193,6 +193,9 @@ const styles = {
   container: {
     minHeight: '100vh',
     display: 'flex',
+    '@media (max-width: 768px)': {
+      flexDirection: 'column',
+    },
   },
   // Left Side - Medical Theme
   leftSide: {
@@ -205,6 +208,14 @@ const styles = {
     alignItems: 'center',
     padding: '40px',
     overflow: 'hidden',
+    '@media (max-width: 768px)': {
+      padding: '20px',
+      minHeight: '40vh',
+    },
+    '@media (max-width: 480px)': {
+      padding: '16px',
+      minHeight: '35vh',
+    },
   },
   medicalScene: {
     position: 'relative',
@@ -213,6 +224,12 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    '@media (max-width: 768px)': {
+      height: '250px',
+    },
+    '@media (max-width: 480px)': {
+      height: '200px',
+    },
   },
   holographicDisplay: {
     position: 'absolute',
@@ -229,6 +246,16 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     gap: '10px',
+    '@media (max-width: 768px)': {
+      width: '250px',
+      height: '150px',
+      padding: '15px',
+    },
+    '@media (max-width: 480px)': {
+      width: '200px',
+      height: '120px',
+      padding: '12px',
+    },
   },
   displayHeader: {
     textAlign: 'center',
@@ -347,10 +374,21 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     padding: '40px',
+    '@media (max-width: 768px)': {
+      padding: '20px',
+      minHeight: '60vh',
+    },
+    '@media (max-width: 480px)': {
+      padding: '16px',
+      minHeight: '65vh',
+    },
   },
   formContainer: {
     width: '100%',
     maxWidth: '400px',
+    '@media (max-width: 768px)': {
+      maxWidth: '100%',
+    },
   },
   formHeader: {
     textAlign: 'center',

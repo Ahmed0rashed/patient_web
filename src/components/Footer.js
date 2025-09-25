@@ -73,11 +73,23 @@ const styles = {
     color: '#f8fafc',
     marginTop: 'auto',
     borderTop: '1px solid #475569',
+    '@media (max-width: 768px)': {
+      padding: '32px 16px 16px',
+    },
+    '@media (max-width: 480px)': {
+      padding: '24px 12px 12px',
+    },
   },
   container: {
     maxWidth: '1200px',
     margin: '0 auto',
     padding: '48px 20px 24px',
+    '@media (max-width: 768px)': {
+      padding: '32px 16px 16px',
+    },
+    '@media (max-width: 480px)': {
+      padding: '24px 12px 12px',
+    },
   },
   content: {
     display: 'grid',

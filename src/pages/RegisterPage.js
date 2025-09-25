@@ -134,9 +134,7 @@ const RegisterPage = () => {
               <p style={styles.displaySubtitle}>Join the Future of Healthcare</p>
             </div>
             <div style={styles.bodyDiagram}>
-              <div style={styles.heartIcon}>❤️</div>
-              <div style={styles.brainIcon}>🧠</div>
-              <div style={styles.lungIcon}>🫁</div>
+
             </div>
             <div style={styles.diagnosticCharts}>
               <div style={styles.chartBar}></div>
@@ -164,7 +162,7 @@ const RegisterPage = () => {
       <div style={styles.rightSide}>
         <div style={styles.formContainer}>
           <div style={styles.formHeader}>
-            <div style={styles.logoIcon}>🏥</div>
+            <div style={styles.logoIcon}></div>
             <h1 style={styles.formTitle}>Create Account</h1>
             <p style={styles.formSubtitle}>Join our medical platform</p>
           </div>
@@ -172,14 +170,14 @@ const RegisterPage = () => {
           <form onSubmit={handleSubmit} style={styles.form}>
             {error && (
               <div style={styles.errorMessage}>
-                <span style={styles.errorIcon}>⚠️</span>
+                <span style={styles.errorIcon}></span>
                 {error}
               </div>
             )}
 
             {success && (
               <div style={styles.successMessage}>
-                <span style={styles.successIcon}>✅</span>
+                <span style={styles.successIcon}></span>
                 {success}
               </div>
             )}
@@ -199,7 +197,7 @@ const RegisterPage = () => {
             </div>
 
             <div style={styles.inputGroup}>
-              <div style={styles.inputIcon}>📧</div>
+              <div style={styles.inputIcon}></div>
               <input
                 type="email"
                 id="email"
@@ -213,7 +211,7 @@ const RegisterPage = () => {
             </div>
 
             <div style={styles.inputGroup}>
-              <div style={styles.inputIcon}>🆔</div>
+              <div style={styles.inputIcon}></div>
               <input
                 type="text"
                 id="nationalId"
@@ -227,7 +225,7 @@ const RegisterPage = () => {
             </div>
 
             <div style={styles.inputGroup}>
-              <div style={styles.inputIcon}>📱</div>
+              <div style={styles.inputIcon}></div>
               <input
                 type="tel"
                 id="contactNumber"
@@ -243,7 +241,7 @@ const RegisterPage = () => {
             </div>
 
             <div style={styles.inputGroup}>
-              <div style={styles.inputIcon}>🔒</div>
+              <div style={styles.inputIcon}></div>
               <input
                 type="password"
                 id="password"
@@ -254,7 +252,7 @@ const RegisterPage = () => {
                 style={styles.input}
                 placeholder="Password"
               />
-              <div style={styles.eyeIcon}>👁️</div>
+              <div style={styles.eyeIcon}></div>
             </div>
 
             <button
@@ -287,6 +285,9 @@ const styles = {
   container: {
     minHeight: '100vh',
     display: 'flex',
+    '@media (max-width: 768px)': {
+      flexDirection: 'column',
+    },
   },
   // Left Side - Medical Theme
   leftSide: {
@@ -299,6 +300,14 @@ const styles = {
     alignItems: 'center',
     padding: '40px',
     overflow: 'hidden',
+    '@media (max-width: 768px)': {
+      padding: '20px',
+      minHeight: '40vh',
+    },
+    '@media (max-width: 480px)': {
+      padding: '16px',
+      minHeight: '35vh',
+    },
   },
   medicalScene: {
     position: 'relative',
@@ -441,10 +450,21 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     padding: '40px',
+    '@media (max-width: 768px)': {
+      padding: '20px',
+      minHeight: '60vh',
+    },
+    '@media (max-width: 480px)': {
+      padding: '16px',
+      minHeight: '65vh',
+    },
   },
   formContainer: {
     width: '100%',
     maxWidth: '400px',
+    '@media (max-width: 768px)': {
+      maxWidth: '100%',
+    },
   },
   formHeader: {
     textAlign: 'center',
