@@ -37,17 +37,14 @@ const ReportDetails = ({ record, report, center }) => {
         <div style={styles.item} className="report-item">
           <strong>Age:</strong> {record.age || 'N/A'}
         </div>
-
-      </div>
-      <div style={styles.row} className="report-row">
         <div style={styles.item} className="report-item">
           <strong>Gender:</strong> {record.sex || 'N/A'}
         </div>
+      </div>
+      <div style={styles.row} className="report-row">
         <div style={styles.item} className="report-item">
           <strong>Report Status:</strong> {report?.result || 'N/A'}
         </div>
-      </div>
-      <div style={styles.row} className="report-row">
         <div style={styles.item} className="report-item">
           <strong>Created At:</strong>{' '}
           {report?.createdAt
@@ -170,8 +167,12 @@ const styles = {
     gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
     gap: '20px',
     '@media (max-width: 768px)': {
-      gridTemplateColumns: '1fr',
-      gap: '16px',
+      gridTemplateColumns: 'repeat(3, 1fr)',
+      gap: '12px',
+    },
+    '@media (max-width: 480px)': {
+      gridTemplateColumns: 'repeat(3, 1fr)',
+      gap: '8px',
     },
   },
   item: {
@@ -181,13 +182,19 @@ const styles = {
     border: '1px solid #e2e8f0',
     boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
     transition: 'all 0.2s ease',
+    textAlign: 'center',
     '@media (max-width: 768px)': {
-      padding: '16px',
-      fontSize: '14px',
+      padding: '12px',
+      fontSize: '13px',
+      minHeight: '80px',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
     },
     '@media (max-width: 480px)': {
-      padding: '14px',
-      fontSize: '13px',
+      padding: '10px',
+      fontSize: '12px',
+      minHeight: '70px',
     },
   },
   section: {

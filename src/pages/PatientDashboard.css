@@ -10,12 +10,93 @@
 @media (max-width: 1024px) {
     .records-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 }
 
-/* Mobile view - 1 column */
+/* Mobile view - 1 column with improved spacing */
 @media (max-width: 768px) {
     .records-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 16px;
+    }
+}
+
+/* Mobile-specific patient info improvements */
+@media (max-width: 768px) {
+    .patient-info-mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .patient-detail-mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 12px;
+        background: #f8fafc;
+        border-radius: 8px;
+        border: 1px solid #e2e8f0;
+    }
+    
+    .patient-detail-mobile .detail-label {
+        font-size: 12px;
+        color: #64748b;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    .patient-detail-mobile .detail-value {
+        font-size: 14px;
+        color: #1e293b;
+        font-weight: 600;
+    }
+    
+    .patient-status-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px;
+        background: #f0f9ff;
+        border-radius: 8px;
+        border: 1px solid #bae6fd;
+    }
+    
+    .patient-actions-mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 16px;
+    }
+    
+    .patient-actions-mobile .view-button {
+        width: 100%;
+        text-align: center;
+        padding: 12px 16px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+    .records-grid {
+        gap: 12px;
+        margin-top: 12px;
+    }
+    
+    .patient-detail-mobile {
+        padding: 10px;
+    }
+    
+    .patient-detail-mobile .detail-label {
+        font-size: 11px;
+    }
+    
+    .patient-detail-mobile .detail-value {
+        font-size: 13px;
     }
 }

@@ -1,7 +1,7 @@
 /* Mobile Footer Styles */
 @media (max-width: 768px) {
     .footer-content {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+        grid-template-columns: 1fr !important;
         gap: 24px !important;
         margin-bottom: 24px !important;
     }
@@ -11,9 +11,15 @@
     }
 
     .footer-links {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px 12px;
+        justify-items: center;
+    }
+
+    .footer-links li {
+        width: 100%;
+        text-align: center;
     }
 }
 
@@ -25,11 +31,19 @@
     }
 
     .footer-section {
-        text-align: left;
+        text-align: center;
     }
 
     .footer-links {
-        gap: 4px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px 8px;
+        justify-items: center;
+    }
+
+    .footer-links li {
+        width: 100%;
+        text-align: center;
     }
 
     .footer-bottom {
@@ -43,6 +57,7 @@
         display: flex !important;
         align-items: center !important;
         padding: 6px 0 !important;
+        font-size: 12px !important;
     }
 
     .footer-link-button {
@@ -50,24 +65,32 @@
         display: flex !important;
         align-items: center !important;
         padding: 6px 0 !important;
+        font-size: 12px !important;
     }
 }
 
 /* Touch-friendly mobile footer */
 @media (max-width: 768px) {
+    .footer-links li {
+        width: 100%;
+        text-align: center;
+    }
 
     .footer-link,
     .footer-link-button {
         min-height: 32px;
         display: flex;
         align-items: center;
+        justify-content: center;
         padding: 4px 0;
+        width: 100%;
+        text-align: center;
     }
 
     .footer-link:hover,
     .footer-link-button:hover {
         color: #f1f5f9;
-        transform: translateX(4px);
+        transform: translateY(-2px);
     }
 }
 

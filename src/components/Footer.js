@@ -180,6 +180,15 @@ const styles = {
     listStyle: 'none',
     padding: 0,
     margin: 0,
+    '@media (max-width: 768px)': {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(3, 1fr)',
+      gap: '8px 12px',
+      justifyItems: 'center',
+    },
+    '@media (max-width: 480px)': {
+      gap: '6px 8px',
+    },
   },
   link: {
     color: '#cbd5e1',
@@ -189,9 +198,11 @@ const styles = {
     transition: 'all 0.2s ease',
     display: 'block',
     padding: '2px 0',
+    textAlign: 'center',
     '@media (max-width: 768px)': {
       fontSize: '13px',
       padding: '4px 0',
+      width: '100%',
     },
     '@media (max-width: 480px)': {
       fontSize: '12px',
@@ -199,6 +210,7 @@ const styles = {
       minHeight: '32px',
       display: 'flex',
       alignItems: 'center',
+      justifyContent: 'center',
     },
   },
   linkButton: {
@@ -212,7 +224,7 @@ const styles = {
     background: 'none',
     border: 'none',
     cursor: 'pointer',
-    textAlign: 'left',
+    textAlign: 'center',
     width: '100%',
     '@media (max-width: 768px)': {
       fontSize: '13px',
@@ -224,6 +236,7 @@ const styles = {
       minHeight: '32px',
       display: 'flex',
       alignItems: 'center',
+      justifyContent: 'center',
     },
   },
   bottom: {

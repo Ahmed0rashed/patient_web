@@ -183,31 +183,34 @@ const PatientDashboard = () => {
               </div>
 
               <div style={styles.recordDetails}>
-                <div style={styles.detailRow}>
-                  <span style={styles.detailLabel}>Patient ID:</span>
-                  <span style={styles.detailValue}>{record.patient_id}</span>
-                </div>
-                <div style={styles.detailRow}>
-                  <span style={styles.detailLabel}>Modality:</span>
-                  <span style={styles.detailValue}>{record.modality}</span>
-                </div>
-                <div style={styles.detailRow}>
-                  <span style={styles.detailLabel}>Age:</span>
-                  <span style={styles.detailValue}>{record.age} years</span>
-                </div>
-                {record.specializationRequest && (
-                  <div style={styles.detailRow}>
-                    <span style={styles.detailLabel}>Specialization:</span>
-                    <span style={styles.detailValue}>{record.specializationRequest}</span>
+                <div className="patient-info-mobile">
+                  <div className="patient-detail-mobile">
+                    <span className="detail-label">Patient ID</span>
+                    <span className="detail-value">{record.patient_id}</span>
                   </div>
-                )}
+                  <div className="patient-detail-mobile">
+                    <span className="detail-label">Modality</span>
+                    <span className="detail-value">{record.modality}</span>
+                  </div>
+                  <div className="patient-detail-mobile">
+                    <span className="detail-label">Age</span>
+                    <span className="detail-value">{record.age} years</span>
+                  </div>
+                  {record.specializationRequest && (
+                    <div className="patient-detail-mobile">
+                      <span className="detail-label">Specialization</span>
+                      <span className="detail-value">{record.specializationRequest}</span>
+                    </div>
+                  )}
+                </div>
               </div>
 
-              <div style={styles.recordActions}>
+              <div style={styles.recordActions} className="patient-actions-mobile">
                 {record.status === 'Completed' ? (
                   <Link 
                     to={`/showReport/${record._id}`} 
                     style={styles.viewButton}
+                    className="view-button"
                   >
                     View Report
                   </Link>
@@ -291,6 +294,11 @@ const styles = {
     justifyContent: 'space-between',
     alignItems: 'flex-start',
     marginBottom: '20px',
+    '@media (max-width: 768px)': {
+      flexDirection: 'column',
+      gap: '12px',
+      marginBottom: '16px',
+    },
   },
   recordInfo: {
     flex: 1,
@@ -301,11 +309,21 @@ const styles = {
     color: '#1e293b',
     marginBottom: '8px',
     lineHeight: '1.4',
+    '@media (max-width: 768px)': {
+      fontSize: '1.1rem',
+      marginBottom: '6px',
+    },
+    '@media (max-width: 480px)': {
+      fontSize: '1rem',
+    },
   },
   recordDate: {
     fontSize: '14px',
     color: '#64748b',
     margin: 0,
+    '@media (max-width: 768px)': {
+      fontSize: '13px',
+    },
   },
   statusBadge: {
     display: 'flex',
@@ -316,12 +334,20 @@ const styles = {
     fontSize: '12px',
     fontWeight: '600',
     border: '1px solid',
+    '@media (max-width: 768px)': {
+      alignSelf: 'flex-start',
+      padding: '8px 14px',
+      fontSize: '13px',
+    },
   },
   statusIcon: {
     fontSize: '14px',
   },
   recordDetails: {
     marginBottom: '20px',
+    '@media (max-width: 768px)': {
+      marginBottom: '16px',
+    },
   },
   detailRow: {
     display: 'flex',
@@ -354,6 +380,13 @@ const styles = {
     fontWeight: '600',
     transition: 'all 0.2s ease',
     boxShadow: '0 2px 4px rgba(59, 130, 246, 0.3)',
+    '@media (max-width: 768px)': {
+      padding: '12px 16px',
+      fontSize: '16px',
+      width: '100%',
+      textAlign: 'center',
+      display: 'block',
+    },
   },
   pendingButton: {
     background: 'linear-gradient(135deg, #9ca3af 0%, #6b7280 100%)',
@@ -363,6 +396,12 @@ const styles = {
     fontSize: '14px',
     fontWeight: '600',
     cursor: 'not-allowed',
+    '@media (max-width: 768px)': {
+      padding: '12px 16px',
+      fontSize: '16px',
+      width: '100%',
+      textAlign: 'center',
+    },
   },
   loadingCard: {
     width: '100%',
