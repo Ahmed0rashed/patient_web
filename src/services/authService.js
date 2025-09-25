@@ -2,7 +2,7 @@
  * Service for patient authentication API calls
  */
 
-const AUTH_API_URL = 'http://localhost:3000/api/patientAuth';
+const AUTH_API_URL = 'https://graduation-project-mmih.vercel.app/api/patientAuth';
 
 /**
  * Register a new patient
@@ -25,8 +25,16 @@ export const registerPatient = async (patientData) => {
     });
 
     if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.message || 'Registration failed');
+      // Try to get error details, but handle cases where response is not JSON
+      let errorMessage = `HTTP ${response.status}: ${response.statusText}`;
+      try {
+        const errorData = await response.json();
+        errorMessage = errorData.message || errorMessage;
+      } catch (jsonError) {
+        // If response is not JSON (e.g., HTML error page), use the status text
+        console.warn('API returned non-JSON response:', response.status, response.statusText);
+      }
+      throw new Error(errorMessage);
     }
 
     const data = await response.json();
@@ -55,8 +63,16 @@ export const loginPatient = async (credentials) => {
     });
 
     if (!response.ok) {
-      const errorData = await response.json();
-      throw new Error(errorData.message || 'Login failed');
+      // Try to get error details, but handle cases where response is not JSON
+      let errorMessage = `HTTP ${response.status}: ${response.statusText}`;
+      try {
+        const errorData = await response.json();
+        errorMessage = errorData.message || errorMessage;
+      } catch (jsonError) {
+        // If response is not JSON (e.g., HTML error page), use the status text
+        console.warn('API returned non-JSON response:', response.status, response.statusText);
+      }
+      throw new Error(errorMessage);
     }
 
     const data = await response.json();

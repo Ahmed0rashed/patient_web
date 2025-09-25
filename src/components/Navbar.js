@@ -28,7 +28,7 @@ const Navbar = () => {
       <div style={styles.container} className="navbar-container">
         {/* Logo and Brand */}
         <div style={styles.brand}>
-          <Link to="/" style={styles.brandLink}>
+          <Link to="/login" style={styles.brandLink}>
             <div style={styles.logo}>
               
               <span style={styles.brandName} className="brand-name">Radintel</span>
@@ -86,14 +86,6 @@ const Navbar = () => {
       {isMenuOpen && (
         <div style={styles.mobileMenu} className="mobile-menu">
           <div style={styles.mobileNav} className="mobile-nav">
-            <Link 
-              to="/" 
-              style={styles.mobileNavLink}
-              className="mobile-nav-link"
-              onClick={handleNavClick}
-            >
-              Home
-            </Link>
             {isAuthenticated && (
               <Link 
                 to="/dashboard" 

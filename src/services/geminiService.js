@@ -23,7 +23,16 @@ export const explainReport = async (findings, impression) => {
     });
 
     if (!response.ok) {
-      throw new Error(`API request failed: ${response.status} ${response.statusText}`);
+      // Try to get error details, but handle cases where response is not JSON
+      let errorMessage = `HTTP ${response.status}: ${response.statusText}`;
+      try {
+        const errorData = await response.json();
+        errorMessage = errorData.message || errorMessage;
+      } catch (jsonError) {
+        // If response is not JSON (e.g., HTML error page), use the status text
+        console.warn('API returned non-JSON response:', response.status, response.statusText);
+      }
+      throw new Error(errorMessage);
     }
 
     const data = await response.json();
